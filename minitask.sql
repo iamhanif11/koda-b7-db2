@@ -49,4 +49,5 @@ SELECT r.name, COUNT (c.id)
 FROM customers r
 JOIN customers c ON r.id = c.referred_by
 GROUP BY r.name
+HAVING COUNT (c.id) > 0
 ORDER BY COUNT (c.id) DESC;
